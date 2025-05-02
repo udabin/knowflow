@@ -21,23 +21,17 @@ FastAPI 서버를 기반으로 동작하며 문서를 벡터화하여 FAISS DB�
 - **Uvicorn** - ASGI 서버 실행
 
 
-## Project Structure
-knowflow/
-├── app/
-│   ├── main.py            # FastAPI 엔드포인트
-│   ├── config.py          # .env 설정 로딩
-│   ├── requirements.txt   # 패키지 목록
-│   └── .env               # API 키 등 민감 정보
-│
-├── core/
-│   ├── ingestion.py       # 문서 로딩, 임베딩, 저장
-│   ├── retriever.py       # 질문에 맞는 문서 검색
-│   ├── generator.py       # LLM 기반 답변 생성
-│   └── utils.py           # 공통 유틸 함수 (예정)
-│
-├── data/
-│   ├── docs/              # 원본 문서들 (.txt, .pdf 등)
-│   └── vectorstore/       # FAISS 인덱스 저장 경로
+## File Descriptions
+- main.py – FastAPI entry point (API server)
+- config.py – Loads settings from .env
+- requirements.txt – Project dependency list
+- .env – API keys and other sensitive information
+- ingestion.py – Loads, splits, and embeds documents
+- retriever.py – Searches for documents similar to the query
+- generator.py – Generates answers using GPT
+- utils.py – Utility functions (planned)
+- docs/ – Original documents (e.g., .txt, .pdf)
+- vectorstore/ – FAISS index storage path
 
 
 ## Features
