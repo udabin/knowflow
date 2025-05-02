@@ -22,7 +22,22 @@ FastAPI 서버를 기반으로 동작하며 문서를 벡터화하여 FAISS DB�
 
 
 ## Project Structure
-knowflow/ ├── app/ │ ├── main.py # FastAPI 엔드포인트 │ ├── config.py # .env 설정 로딩 │ ├── requirements.txt # 패키지 목록 │ └── .env # API 키 등 민감 정보 │ ├── core/ │ ├── ingestion.py # 문서 로딩, 임베딩, 저장 │ ├── retriever.py # 질문에 맞는 문서 검색 │ ├── generator.py # LLM 기반 답변 생성 │ └── utils.py # 공통 유틸 함수 (예정) │ ├── data/ │ ├── docs/ # 원본 문서들 (.txt, .pdf 등) │ └── vectorstore/ # FAISS 인덱스 저장 경로
+knowflow/
+├── app/
+│   ├── main.py            # FastAPI 엔드포인트
+│   ├── config.py          # .env 설정 로딩
+│   ├── requirements.txt   # 패키지 목록
+│   └── .env               # API 키 등 민감 정보
+│
+├── core/
+│   ├── ingestion.py       # 문서 로딩, 임베딩, 저장
+│   ├── retriever.py       # 질문에 맞는 문서 검색
+│   ├── generator.py       # LLM 기반 답변 생성
+│   └── utils.py           # 공통 유틸 함수 (예정)
+│
+├── data/
+│   ├── docs/              # 원본 문서들 (.txt, .pdf 등)
+│   └── vectorstore/       # FAISS 인덱스 저장 경로
 
 
 ## Features
@@ -60,10 +75,10 @@ uvicorn app.main:app --reload
 ```
 
 ## TODO
- Multi-agent extension (LangGraph or FSM)
- Upload API for documents
- PDF or Markdown report generation
- Chat history storage
+- Multi-agent extension (LangGraph or FSM)
+- Upload API for documents
+- PDF or Markdown report generation
+- Chat history storage
 
 ## License
 MIT License © 2025 KnowFlow
