@@ -1,0 +1,33 @@
+# FastAPI 서버
+fastapi
+uvicorn[stardard]
+
+# 문서 인덱싱 및 검색
+langchain
+langchain-community
+faiss-cpu
+sentence-transformers
+
+# LLM
+openai
+tiktoken
+transformers
+accelerate
+torch
+
+# 멀티 에이전트 & LangGraph
+langgraph
+
+# 로깅, 설정관리, 기타
+loguru
+python-dotenv
+pydantic
+pydantic-settings
+
+# 문서 파싱 (PDF, Word, 텍스트 등)
+unstructured
+pdfminer.six
+docx2txt
+
+# 개발 편의
+httpx
