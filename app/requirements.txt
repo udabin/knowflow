@@ -11,9 +11,10 @@ sentence-transformers
 # LLM
 openai
 tiktoken
-transformers
+transformers>=4.35.0
+sentence-transformers
 accelerate
-torch
+torch>=1.13.1
 
 # 멀티 에이전트 & LangGraph
 langgraph
@@ -21,7 +22,7 @@ langgraph
 # 로깅, 설정관리, 기타
 loguru
 python-dotenv
-pydantic
+pydantic2
 pydantic-settings
 
 # 문서 파싱 (PDF, Word, 텍스트 등)

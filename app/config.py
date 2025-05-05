@@ -7,7 +7,7 @@ load_dotenv()
 
 class Settings(BaseSettings):
     openai_api_key: str
-    embedding_model: str = "snunlp/KR-SBERT-V40K-klueNLI-augSTS"
+    embedding_model: str
     vectorstore_path: str = "./data/vectorstore/index.faiss"
     project_name: str = "KnowFlow"
 

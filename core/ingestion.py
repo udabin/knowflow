@@ -7,7 +7,7 @@ import os
 from pathlib import Path
 from typing import List
 
-from langchain.documet_loaders import DirectoryLoader, TextLoader, UnstructuredPDFLoader
+from langchain_community.document_loaders import DirectoryLoader, TextLoader, UnstructuredPDFLoader
 from langchain.text_splitter import RecursiveCharacterTextSplitter
 # from langchain.vectorstores import FAISS
 from langchain_community.vectorstores import FAISS
@@ -15,6 +15,10 @@ from langchain_community.vectorstores import FAISS
 from langchain_community.embeddings import HuggingFaceEmbeddings
 
 from app.config import settings
+
+import sys
+sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+
 
 def load_documents(directory: str) ->  List:
     """docs 폴더 내 문서 불러오기"""
@@ -48,3 +52,6 @@ def ingest_documents():
 
     embed_and_store(chunks, settings.vectorstore_path)
     print("벡터스토어 저장 완료!")
+
+if __name__ == "__main__":
+    ingest_documents()

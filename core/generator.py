@@ -12,13 +12,14 @@ def generate_answer(query: str, top_k: int=3) -> str:
 
     # LLM
     llm = ChatOpenAI(
-        model_name="gpt-4",
+        # model_name="gpt-4o",
+        model_name="gpt-3.5-turbo",
         temperature=0,
         openai_api_key=settings.openai_api_key
     )
 
     # RAG 체인 구성 : 검색 + 답변 생성
-    qa_chain = RetreivalQA.from_chain_type(
+    qa_chain = RetrievalQA.from_chain_type(
         llm=llm,
         retriever=vectorstore.as_retriever(search_kwargs={"k": top_k}),
         return_source_documents=False

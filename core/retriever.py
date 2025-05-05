@@ -14,7 +14,7 @@ from app.config import settings
 def load_vectorstore(persist_path: str) -> FAISS:
     """저장된 FAISS 인덱스를 불러온다"""
     embeddings = HuggingFaceEmbeddings(model_name=settings.embedding_model)
-    return FAISS.load_local(persist_path, embeddings)
+    return FAISS.load_local(persist_path, embeddings, allow_dangerous_deserialization=True)
 
 def retrieve_documents(query: str, top_k: int = 3) -> list[Document]:
     """질문과 유사한 문서를 벡터 DB에서 검색"""
